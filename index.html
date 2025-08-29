@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nrithyalaya Dance Temple | Bharatanatyam in Sydney</title>
+  <meta name="description" content="Nrithyalaya Dance Temple in Sydney — traditional Bharatanatyam training by Guru Sindhu Manognya. Classes for kids to adults. Performances, community events, and personalized coaching." />
+  <meta name="theme-color" content="#742d20" />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="Nrithyalaya Dance Temple | Bharatanatyam in Sydney" />
+  <meta property="og:description" content="Traditional Bharatanatyam school led by Guru Sindhu Manognya. Classes, performances, and community showcases." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nrithyalaya.com" />
+  <meta property="og:image" content="/assets/og-cover.jpg" />
+
+  <!-- Fonts: classical + readable -->
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Marcellus&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fff8f0;              /* parchment */
+      --ink:#2f221f;             /* dark brown/ink */
+      --maroon:#742d20;          /* temple maroon */
+      --saffron:#d97706;         /* saffron accent */
+      --leaf:#3e6b47;            /* green accent */
+      --rose:#964b5a;            /* rose accent */
+      --muted:#7f6a63;           /* muted text */
+      --ring:rgba(116,45,32,.25);
+      --radius:18px;
+      --shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--maroon);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1100px,92vw);margin-inline:auto}
+
+    /* Decorative kolam border using repeated inline SVG */
+    .kolam{background:
+      radial-gradient(circle at 10px 10px, var(--saffron) 2px, transparent 3px) 0 0/20px 20px,
+      radial-gradient(circle at 10px 10px, var(--leaf) 2px, transparent 3px) 10px 10px/20px 20px;
+      opacity:.25; height:10px}
+
+    header{
+      position:sticky;top:0;z-index:50;background:linear-gradient(180deg, #fff8f0 60%, rgba(255,248,240,.8));
+      backdrop-filter:saturate(1.2) blur(6px); border-bottom:1px solid #efe2d6
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:baseline;gap:10px}
+    .logo{font-family:"Tiro Devanagari Sanskrit", serif;font-size:34px;line-height:1;color:var(--maroon);letter-spacing:1px}
+    .tag{font:600 12px/1 Inter;color:var(--muted);text-transform:uppercase;letter-spacing:2px}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{font-weight:600}
+    .cta{display:inline-flex;align-items:center;gap:8px;background:var(--maroon);color:#fff;padding:10px 14px;border-radius:999px;border:2px solid transparent;box-shadow:var(--shadow)}
+    .cta:hover{filter:brightness(1.05)}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:
+      radial-gradient(1200px 400px at 80% -20%, rgba(217,119,6,.15), transparent 60%),
+      radial-gradient(800px 400px at -10% 10%, rgba(116,45,32,.18), transparent 50%)}
+    .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:60px 0}
+    .wordmark{font-family:"Tiro Devanagari Sanskrit",serif;font-size:54px;color:var(--maroon)}
+    .subtitle{font-family:Marcellus,serif;font-size:22px;color:var(--ink)}
+    .hero-card{background:#fff;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid #f1e4d8}
+    .hero-card ul{margin:0;padding-left:18px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .badge{background:#fff;border:1px solid #eadbcf;padding:6px 10px;border-radius:999px;font-size:12px}
+
+    /* Sections */
+    section{padding:50px 0}
+    h2{font-family:Marcellus,serif;font-size:34px;margin:0 0 14px;color:var(--maroon)}
+    .lead{color:var(--muted);max-width:70ch}
+
+    /* Cards */
+    .grid{display:grid;gap:22px}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .card{background:#fff;border:1px solid #efdfd4;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card .pad{padding:18px}
+
+    /* Schedule */
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:16px;border:1px solid #efdfd4;background:#fff}
+    th,td{padding:14px 16px;text-align:left;border-bottom:1px solid #f3e7db}
+    th{background:#fcf4ea;font-weight:800}
+    tr:last-child td{border-bottom:none}
+
+    /* Testimonials */
+    .quote{font-style:italic}
+    .quote::before{content:"\201C";font-size:34px;color:var(--saffron);margin-right:6px}
+
+    /* Events gallery */
+    .gallery{columns:1;column-gap:16px}
+    .gallery img{width:100%;border-radius:12px;margin:0 0 16px;border:1px solid #efdfd4}
+    @media(min-width:700px){.gallery{columns:2}}
+    @media(min-width:1000px){.gallery{columns:3}}
+
+    /* Footer */
+    footer{padding:40px 0 70px;border-top:1px solid #efe2d6;background:linear-gradient(180deg,#fff 0,#fff8f0 100%)}
+    .footcols{display:grid;gap:20px}
+    @media(min-width:800px){
+      .footcols{grid-template-columns:2fr 1fr 1fr}
+    }
+    .small{font-size:12px;color:var(--muted)}
+
+    /* Floating WhatsApp */
+    .whatsapp{position:fixed;right:18px;bottom:18px;z-index:60}
+    .whatsapp a{display:flex;align-items:center;gap:10px;background:#25D366;color:#0b3c1f;padding:12px 14px;border-radius:999px;border:2px solid rgba(0,0,0,.05);box-shadow:var(--shadow);font-weight:800}
+
+    /* Simple fade-in */
+    [data-animate]{opacity:0;transform:translateY(8px);transition:all .6s ease}
+    [data-animate].show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <div class="kolam" aria-hidden="true"></div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">Nrithyalaya</div>
+        <div class="tag">Dance Temple • Bharatanatyam</div>
+      </div>
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#schedule">Classes</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#events">Events</a>
+        <a href="#testimonials">Testimonials</a>
+        <a class="cta" href="#contact">Enquire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1 class="wordmark" data-animate>Traditional Bharatanatyam in Sydney</h1>
+          <p class="subtitle" data-animate>Rooted in the Pandanallur & Mezhathoor lineages, Nrithyalaya trains students from age 2 to 60 with care, discipline, and joy.</p>
+
+          <div class="hero-card" data-animate>
+            <strong>Why Nrithyalaya?</strong>
+            <ul>
+              <li>Led by <strong>Guru Sindhu Manognya</strong> (Vidwat-certified), 15+ years of training, 10+ years teaching.</li>
+              <li>Over <strong>20 community performances</strong> across Sydney & Southern India, including Mysuru & Jaganmohan Palaces.</li>
+              <li>Personalized coaching • Technique, Abhinaya, Theory • In‑person & online.</li>
+            </ul>
+            <div class="badges">
+              <span class="badge">Kids • Teens • Adults</span>
+              <span class="badge">Beginner to Advanced</span>
+              <span class="badge">Arangetram Pathway</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="/assets/hero-placeholder.jpg" alt="Bharatanatyam dancer silhouette" style="border-radius:var(--radius);border:1px solid #efdfd4;box-shadow:var(--shadow)"/>
+          <p class="small" style="margin-top:8px">Tip: replace <code>/assets/hero-placeholder.jpg</code> with your banner photo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2 data-animate>About Nrithyalaya</h2>
+        <p class="lead" data-animate>
+          Nrithyalaya Dance Temple is a Bharatanatyam school based in Sydney. We preserve the classical grammar while making the art accessible to modern learners. Training blends <em>adavus</em>, repertoire, rhythm & theory with a strong emphasis on <em>nritta</em> precision and <em>abhinaya</em> expression.
+        </p>
+        <div class="grid cols-2" style="margin-top:16px">
+          <div class="card"><div class="pad">
+            <h3 style="margin-top:0">Teaching Approach</h3>
+            <ul>
+              <li>Structured progression with clear milestones and assessments</li>
+              <li>Foundation to <em>margam</em> repertoire (Alarippu to Tillana)</li>
+              <li>Music & rhythm work — <em>tala</em>, <em>solkattu</em>, and stagecraft</li>
+              <li>Performance opportunities at community events and festivals</li>
+            </ul>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h3 style="margin-top:0">Highlights</h3>
+            <ul>
+              <li>Performances: Mysuru Palace, Jaganmohan Palace, Nrithya Sabha, Dasara Meet, and Sydney showcases</li>
+              <li>Awarded <em>Dance of Honour</em> by Kanika Parameshwari Trust</li>
+              <li>Inclusive classes from age 2 to seniors</li>
+            </ul>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule">
+      <div class="container">
+        <h2 data-animate>Class Schedule</h2>
+        <p class="lead" data-animate>All classes are in Sydney (in‑person) with limited online spots. Trial class available by request.</p>
+        <div class="card"><div class="pad">
+          <table aria-label="Weekly Class Schedule">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Batch / Level</th>
+                <th>Mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Tuesday</td><td>6:00 – 8:00 PM</td><td>Intermediate / Senior</td><td>In‑person</td></tr>
+              <tr><td>Friday</td><td>6:00 – 7:00 PM</td><td>Beginner / Kids</td><td>In‑person</td></tr>
+              <tr><td>Saturday</td><td>8:00 – 10:00 AM</td><td>Foundation / Technique</td><td>In‑person</td></tr>
+              <tr><td>Saturday</td><td>4:00 – 6:00 PM</td><td>Intermediate</td><td>In‑person</td></tr>
+              <tr><td>Saturday</td><td>6:00 – 8:00 PM</td><td>Senior / Repertoire</td><td>In‑person</td></tr>
+            </tbody>
+          </table>
+          <p class="small" style="margin-top:8px">Note: Students can attend multiple days. Additional batches open on demand.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- TEACHERS -->
+    <section id="teachers">
+      <div class="container">
+        <h2 data-animate>Teachers</h2>
+        <div class="grid cols-2" style="align-items:start">
+          <div class="card"><div class="pad">
+            <img src="/assets/sindhu-portrait.jpg" alt="Guru Sindhu Manognya" style="border-top-left-radius:16px;border-top-right-radius:16px;margin:-18px -18px 12px -18px;border-bottom:1px solid #efdfd4">
+            <h3 style="margin:0">Guru Sindhu Manognya</h3>
+            <p class="small">Artistic Director • Vidwat‑certified • Bharatanatyam (Pandanallur & Mezhathoor)</p>
+            <p>
+              Sindhu began learning Bharatanatyam at age 5 under <strong>Guru Parvati Vidhyanathan</strong>, completing 15+ years of rigorous study before moving into full‑time teaching. Over the past decade in Sydney, she has trained students from ages 2–60, choreographed for festivals, and prepared seniors for <em>arangetram</em>. Her teaching balances classical grammar with individual expression.
+            </p>
+            <ul>
+              <li><strong>Styles:</strong> Pandanallur, Mezhathoor (Bharatanatyam)</li>
+              <li><strong>Focus:</strong> Adavus, Abhinaya, Repertoire, Stagecraft, Theory</li>
+              <li><strong>Notable venues:</strong> Mysuru Palace, Jaganmohan Palace, Nrithya Sabha, Dasara Meet; Sydney community festivals</li>
+              <li><strong>Award:</strong> Dance of Honour — Kanika Parameshwari Trust</li>
+            </ul>
+          </div></div>
+
+          <div class="card"><div class="pad">
+            <h3 style="margin-top:0">Guest Coaches & Workshops</h3>
+            <p>
+              Nrithyalaya occasionally hosts masterclasses with visiting artists covering <em>nattuvangam</em>, <em>mridangam</em>, and performance polish. Join the mailing list to hear about upcoming sessions.
+            </p>
+            <p><a href="#contact" class="cta" style="display:inline-flex">Join the list</a></p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events">
+      <div class="container">
+        <h2 data-animate>Events & Performances</h2>
+        <p class="lead" data-animate>
+          Our students have performed at <strong>20+ community events</strong> across Sydney — temple festivals, multicultural fairs, school galas, and charity showcases. Explore highlights below.
+        </p>
+        <div class="gallery" aria-label="Events photo gallery">
+          <!-- Replace these with your real photos placed under /assets/events/ -->
+          <img src="/assets/events/event1.jpg" alt="Sydney community stage — group performance"/>
+          <img src="/assets/events/event2.jpg" alt="Solo Bharatanatyam item — Varnam"/>
+          <img src="/assets/events/event3.jpg" alt="Temple festival — Keerthanam"/>
+          <img src="/assets/events/event4.jpg" alt="Multicultural fair — Tillana finale"/>
+          <img src="/assets/events/event5.jpg" alt="Students after performance — group photo"/>
+          <img src="/assets/events/event6.jpg" alt="Junior batch — Alarippu"/>
+        </div>
+        <p class="small" style="margin-top:10px">Tip: Add as many photos as you like in <code>assets/events/</code>; the gallery flows automatically.</p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="container">
+        <h2 data-animate>Testimonials</h2>
+        <div class="grid cols-3">
+          <div class="card"><div class="pad">
+            <p class="quote">My daughter found her confidence on stage. The foundation work is strong and the guidance is gentle.</p>
+            <p class="small">— Parent (Beginner Batch)</p>
+          </div></div>
+          <div class="card"><div class="pad">
+            <p class="quote">Authentic training with opportunities to perform at real community events. Highly recommend Nrithyalaya!</p>
+            <p class="small">— Senior Student</p>
+          </div></div>
+          <div class="card"><div class="pad">
+            <p class="quote">Sindhu blends discipline with empathy. The repertoire and abhinaya coaching are excellent.</p>
+            <p class="small">— Parent (Intermediate Batch)</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / ENQUIRY -->
+    <section id="contact">
+      <div class="container">
+        <h2 data-animate>Enquire & Join</h2>
+        <div class="grid cols-2">
+          <div class="card"><div class="pad">
+            <h3 style="margin-top:0">Get in touch</h3>
+            <p>Message us on WhatsApp or email for trial classes, fees, and batch placement.</p>
+            <ul>
+              <li><strong>WhatsApp:</strong> <a id="wa1" href="https://wa.me/61400000000" target="_blank" rel="noopener">+61 400 000 000</a></li>
+              <li><strong>Email:</strong> <a href="mailto:hello@nrithyalaya.com">hello@nrithyalaya.com</a></li>
+              <li><strong>Instagram:</strong> <a href="https://instagram.com/nrithyalaya" target="_blank" rel="noopener">@nrithyalaya</a> <span class="small">(optional)</span></li>
+            </ul>
+            <p class="small">Replace the phone and handles in the HTML before publishing.</p>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h3 style="margin-top:0">Location</h3>
+            <p>Sydney, Australia — classes run in local studio spaces. Address provided on confirmation.</p>
+            <iframe title="Map" src="https://www.openstreetmap.org/export/embed.html?bbox=150.52%2C-34.1%2C151.35%2C-33.7&amp;layer=mapnik" style="width:100%;height:220px;border:1px solid #efdfd4;border-radius:12px"></iframe>
+          </div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footcols">
+      <div>
+        <div class="logo" style="margin-bottom:8px">Nrithyalaya</div>
+        <p class="small">© <span id="year"></span> Nrithyalaya Dance Temple. Bharatanatyam classes in Sydney.</p>
+        <p class="small">ABN / Registration (optional)</p>
+      </div>
+      <div>
+        <h4 style="margin:0 0 8px">Quick Links</h4>
+        <ul style="margin:0;padding-left:18px">
+          <li><a href="#about">About</a></li>
+          <li><a href="#schedule">Classes</a></li>
+          <li><a href="#teachers">Teachers</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Enquire</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin:0 0 8px">Policies</h4>
+        <ul style="margin:0;padding-left:18px">
+          <li><a href="#" onclick="alert('Add your Code of Conduct PDF link.');return false;">Code of Conduct</a></li>
+          <li><a href="#" onclick="alert('Add your Child Safety Policy PDF link.');return false;">Child Safety</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button (prominent) -->
+  <div class="whatsapp" aria-label="WhatsApp contact">
+    <a id="wa2" href="https://wa.me/61400000000" target="_blank" rel="noopener" title="Chat on WhatsApp">
+      <!-- WhatsApp icon (inline SVG) -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.02.2C5.9.2.96 5.15.96 11.27c0 2 .53 3.95 1.53 5.67L.2 23.8l7.06-2.2a11.27 11.27 0 0 0 4.76 1.08h.01c6.12 0 11.07-4.95 11.07-11.07 0-2.94-1.15-5.7-3.19-7.74Zm-8.5 17.2a9.36 9.36 0 0 1-4.77-1.31l-.34-.2-4.2 1.31 1.38-4.09-.22-.35A9.28 9.28 0 0 1 2.9 11.26c0-5.08 4.13-9.22 9.22-9.22 2.46 0 4.77.96 6.5 2.7 1.74 1.73 2.7 4.04 2.7 6.5 0 5.09-4.14 9.22-9.22 9.22Zm5.1-6.9c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.62.14-.18.27-.71.9-.87 1.09-.16.2-.32.2-.6.07-.29-.14-1.22-.45-2.31-1.44-.85-.76-1.43-1.7-1.6-1.98-.17-.29 0-.44.13-.58.13-.13.29-.34.43-.5.14-.16.18-.27.27-.45.09-.2.05-.36-.03-.5-.08-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47h-.53c-.18 0-.5.07-.76.36-.26.27-.99.97-.99 2.36 0 1.39 1.02 2.74 1.16 2.93.14.2 2.02 3.08 4.9 4.32.69.3 1.23.49 1.65.63.69.22 1.31.19 1.8.12.55-.08 1.64-.67 1.87-1.31.23-.64.23-1.19.16-1.31-.06-.11-.24-.18-.52-.31Z"/></svg>
+      <span>WhatsApp us</span>
+    </a>
+  </div>
+
+  <script>
+    // Simple intersection observer to fade in
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); })
+    },{threshold:.08});
+    document.querySelectorAll('[data-animate]').forEach(el=>obs.observe(el));
+
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // If you change the WhatsApp number in one place, keep both in sync
+    const wa = 'https://wa.me/61400000000'; // <-- REPLACE with your number in international format
+    document.getElementById('wa1').href = wa; document.getElementById('wa2').href = wa;
+  </script>
+
+  <!-- JSON‑LD for local SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DanceSchool",
+    "name": "Nrithyalaya Dance Temple",
+    "url": "https://www.nrithyalaya.com",
+    "description": "Traditional Bharatanatyam training in Sydney by Guru Sindhu Manognya (Vidwat-certified). Classes for kids to adults; performances & community showcases.",
+    "address": {"@type": "PostalAddress", "addressLocality": "Sydney", "addressCountry": "AU"},
+    "areaServed": "Sydney",
+    "founder": "Sindhu Manognya",
+    "sameAs": ["https://instagram.com/nrithyalaya"],
+    "telephone": "+61 400 000 000"
+  }
+  </script>
+</body>
+</html>
